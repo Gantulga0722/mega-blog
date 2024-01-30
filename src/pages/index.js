@@ -1,13 +1,28 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import Blog from "./Blog";
+import React from "react";
+import { Header, Highlight, Trend, Post } from "@/components";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export default function Home() {
+export default function Page(props) {
+  const { hlData, trendData, postData } = props;
+  console.log(props);
   return (
-    <div className="flex">
-      <Blog />
+    <div className="flex flex-col items-center gap-[100px] mx-auto justify-center">
+      <Header />
+      <Highlight hlData={hlData} />
+      <Trend trendData={trendData} />
+      <Post postData={postData} />
     </div>
   );
 }
+
+export const getStaticProps = async (context) => {
+  const highlight = await fetch("https://dev.to/api/articles?top=1&per_page=1");
+  const hlData = await highlight.json();
+  const trend = await fetch("https://dev.to/api/articles?top=1&per_page=5");
+  const trendData = await trend.json();
+  const post = await fetch("https://dev.to/api/articles?top=30&per_page=30");
+  const postData = await post.json();
+
+  return {
+    props: { hlData, trendData, postData },
+  };
+};
