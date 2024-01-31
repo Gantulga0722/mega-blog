@@ -4,10 +4,10 @@ import { TagFilter } from "@/components";
 
 export const Post = (props) => {
   return (
-    <div className="flex flex-col gap-12">
+    <div className="flex md:container md:mx-auto flex-col gap-12">
       <TagFilter />
-      <div className="flex flex-col items-center gap-[32px] w-[1231px]">
-        <div className="flex items-start gap-5 flex-wrap">
+      <div className="flex flex-col items-center gap-[32px] max-w-[1280px] w-[100%]">
+        <div className="flex items-start justify-between gap-5 flex-wrap">
           {props.postData.map((post) => (
             <div className="flex w-[392px] p-4 flex-col justify-center items-center gap-4 rounded-[12px] border border-[#E8E8EA] bg-[#FFF]">
               <div
@@ -22,8 +22,10 @@ export const Post = (props) => {
               <div className="flex p-2 flex-col items-start gap-5 self-stretch">
                 <div className="flex flex-col items-start gap-4 self-stretch">
                   <div className="flex flex-col items-start gap-4 self-stretch">
-                    <div>
-                      <PostBadge text={post.tag_list[0]} />
+                    <div className="flex gap-2 flex-wrap">
+                      {post.tag_list.map((tag) => (
+                        <PostBadge text={tag} />
+                      ))}
                     </div>
                     <div className="self-stretch">
                       <p className="text-[#181A2A] font-sans text-[24px] not-italic font-semibold leading-7">

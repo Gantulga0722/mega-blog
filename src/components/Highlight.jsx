@@ -19,8 +19,10 @@ export const Highlight = (props) => {
         >
           <div className="flex w-[598px] p-[40px] flex-col items-start gap-6 rounded-[12px] border-[#E8E8EA] bg-[#FFF] shadow-[0px_12px_24px_-6px rgba(24,26,42,0.12)] absolute left-[11px] bottom-[13px]">
             <div className="flex flex-col items-start gap-4 self-stretch">
-              <div>
-                <HlBadge text={highL.tag_list[0]} />
+              <div className="flex gap-2 flex-wrap">
+                {highL.tag_list.map((tag) => (
+                  <HlBadge text={tag} />
+                ))}
               </div>
               <div>
                 <p className="self-stretch text-[#181A2] font-sans text-[36px] font-semibold leading-10">

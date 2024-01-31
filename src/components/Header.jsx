@@ -25,7 +25,10 @@ export const Header = () => {
               >
                 Blog
               </li>
-              <li className="text-[#3B3C4A] font-sans text-[16px] not-italic font-normal leading-6">
+              <li
+                className="text-[#3B3C4A] font-sans text-[16px] not-italic font-normal leading-6"
+                onClick={() => router.push("/contact")}
+              >
                 Contact
               </li>
             </ul>

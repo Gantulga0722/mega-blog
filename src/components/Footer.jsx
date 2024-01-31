@@ -48,7 +48,10 @@ export const Footer = () => {
           </div>
           <div className="flex w-[521px] justify-center items-start gap-20 shrink-0">
             <div className="flex flex-col items-start gap-2">
-              <p className="text-[#3B3C4A] font-sans text-[16px] not-italic font-normal leading-6">
+              <p
+                className="text-[#3B3C4A] font-sans text-[16px] not-italic font-normal leading-6"
+                onClick={() => router.push("/")}
+              >
                 Home
               </p>
               <p
@@ -57,7 +60,10 @@ export const Footer = () => {
               >
                 Blog
               </p>
-              <p className="text-[#3B3C4A] font-sans text-[16px] not-italic font-normal leading-6">
+              <p
+                className="text-[#3B3C4A] font-sans text-[16px] not-italic font-normal leading-6"
+                onClick={() => router.push("/contact")}
+              >
                 Contact
               </p>
             </div>

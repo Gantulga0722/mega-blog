@@ -13,44 +13,47 @@ export const TagFilter = () => {
         <div className="flex w-[1216px] items-center gap-[30px]">
           <ul className="flex items-center gap-5">
             <li
-              className="text-[#D4A373] font-sans text-[12px] not-italic font-bold leading-[25px]"
+              className="text-[#495057] font-sans text-[12px] not-italic font-bold leading-[25px] hover:text-[#D4A373]"
               onClick={() => router.push("/blog")}
             >
               All
             </li>
             <li
-              className="text-[#495057] font-sans text-[12px] not-italic font-bold leading-[25px]"
+              className="text-[#495057] font-sans text-[12px] not-italic font-bold leading-[25px] hover:text-[#D4A373]"
               onClick={() => router.push("/blog/Design")}
             >
               Design
             </li>
             <li
-              className="text-[#495057] font-sans text-[12px] not-italic font-bold leading-[25px]"
+              className="text-[#495057] font-sans text-[12px] not-italic font-bold leading-[25px] hover:text-[#D4A373]"
               onClick={() => router.push("/blog/Travel")}
             >
               Travel
             </li>
             <li
-              className="text-[#495057] font-sans text-[12px] not-italic font-bold leading-[25px]"
+              className="text-[#495057] font-sans text-[12px] not-italic font-bold leading-[25px] hover:text-[#D4A373]"
               onClick={() => router.push("/blog/Fashion")}
             >
               Fashion
             </li>
             <li
-              className="text-[#495057] font-sans text-[12px] not-italic font-bold leading-[25px]"
+              className="text-[#495057] font-sans text-[12px] not-italic font-bold leading-[25px] hover:text-[#D4A373]"
               onClick={() => router.push("/blog/Technology")}
             >
               Technology
             </li>
             <li
-              className="text-[#495057] font-sans text-[12px] not-italic font-bold leading-[25px]"
+              className="text-[#495057] font-sans text-[12px] not-italic font-bold leading-[25px] hover:text-[#D4A373]"
               onClick={() => router.push("/blog/Branding")}
             >
               Branding
             </li>
           </ul>
           <div className="flex-[1_0_0]">
-            <p className="text-[#495057] text-right font-sans text-[12px] not-italic font-bold leading-[25px]">
+            <p
+              className="text-[#495057] text-right font-sans text-[12px] not-italic font-bold leading-[25px] hover:text-[#D4A373]"
+              onClick={() => router.push("/blog")}
+            >
               View All
             </p>
           </div>
