@@ -20,7 +20,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="flex p-[10px_0] items-center gap-[50px]">
-            <div className="flex w-[294px] h-[133px] p-[16px] flex-col items-start gap-[10px] border border-[#E8E8EA]">
+            <div className="flex w-[294px] h-[133px] p-[16px] flex-col items-start gap-[10px] rounded-[12px] border border-[#E8E8EA]">
               <h3 className="text-[#000] font-sans text-[24px] not-italic font-semibold leading-10">
                 Address
               </h3>

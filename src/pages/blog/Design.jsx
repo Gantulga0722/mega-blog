@@ -40,7 +40,7 @@ const Design = (props) => {
                       <div
                         className="w-[36px] h-[36px] rounded-[28px]"
                         style={{
-                          backgroundImage: `url(${post.social_image})`,
+                          backgroundImage: `url(${post.user.profile_image})`,
                           backgroundSize: "cover",
                           backgroundPosition: "center",
                           backgroundRepeat: "no-repeat",
