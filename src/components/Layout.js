@@ -1,7 +1,13 @@
+import { Header, Footer } from "@/components";
+
 const Layout = ({ children }) => {
   return (
     <>
-      <main>{children}</main>
+      <div className="flex mx-auto flex-col">
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </div>
     </>
   );
 };

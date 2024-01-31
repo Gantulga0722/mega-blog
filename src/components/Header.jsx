@@ -3,7 +3,7 @@ import { MegaBlogIcon, SearchIcon } from "./icons";
 
 export const Header = () => {
   return (
-    <div className="flex w-[1917px] px-[350px] py-[32px] flex-col items-start gap-[10px]">
+    <div className="flex w-[1917px] px-[350px] py-[32px] flex-col items-start gap-[10px] ml-[99px] mb-[100px] fixed z-10 bg-[#FFFFFF]">
       <div className="flex items-start gap-[118px]">
         <div className="w-[158px] h-[36px]">
           <MegaBlogIcon />

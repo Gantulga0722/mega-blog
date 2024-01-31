@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export const Highlight = (props) => {
   return (
-    <div className="flex flex-col gap-[11px]">
+    <div className="flex flex-col gap-[11px] mt-[140px]">
       {props.hlData.map((highL) => (
         <div
           style={{
@@ -29,7 +29,7 @@ export const Highlight = (props) => {
             </div>
             <div>
               <p className="text-[#97989F] font-sans text-[16px] not-italic font-normal leading-6">
-                {Date(highL.published_atnew).toLocaleString()}
+                {highL.published_at}
               </p>
             </div>
           </div>

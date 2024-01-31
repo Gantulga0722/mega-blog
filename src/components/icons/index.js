@@ -3,3 +3,8 @@ export * from "./SearchIcon";
 export * from "./HighlightImg";
 export * from "./LeftArrowIcon";
 export * from "./RightArrowIcon";
+export * from "./FacebookIcon";
+export * from "./TwitterIcon";
+export * from "./InstaIcon";
+export * from "./LinkedinIcon";
+export * from "./MegaIcon";

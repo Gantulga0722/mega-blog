@@ -1,15 +1,15 @@
 import React from "react";
-import { Header, Highlight, Trend, Post } from "@/components";
+import { Highlight, Trend, Post, LoadMore } from "@/components";
 
 export default function Page(props) {
   const { hlData, trendData, postData } = props;
   console.log(props);
   return (
     <div className="flex flex-col items-center gap-[100px] mx-auto justify-center">
-      <Header />
       <Highlight hlData={hlData} />
       <Trend trendData={trendData} />
       <Post postData={postData} />
+      <LoadMore />
     </div>
   );
 }
@@ -17,9 +17,9 @@ export default function Page(props) {
 export const getStaticProps = async (context) => {
   const highlight = await fetch("https://dev.to/api/articles?top=1&per_page=1");
   const hlData = await highlight.json();
-  const trend = await fetch("https://dev.to/api/articles?top=1&per_page=5");
+  const trend = await fetch("https://dev.to/api/articles?top=1&per_page=4");
   const trendData = await trend.json();
-  const post = await fetch("https://dev.to/api/articles?top=30&per_page=30");
+  const post = await fetch("https://dev.to/api/articles?top=30&per_page=9");
   const postData = await post.json();
 
   return {
