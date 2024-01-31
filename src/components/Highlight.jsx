@@ -6,15 +6,16 @@ import Image from "next/image";
 
 export const Highlight = (props) => {
   return (
-    <div className="flex flex-col gap-[11px] mt-[140px]">
+    <div className="md:container md:mx-auto flex flex-col gap-[11px] mt-[140px]">
       {props.hlData.map((highL) => (
         <div
           style={{
             backgroundImage: `url(${highL.cover_image})`,
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
           }}
-          className="w-[1216px] h-[600px] shrink-0 rounded-[12px] relative"
+          className="w-[100%] h-[600px] shrink-0 border rounded-[12px] relative"
         >
           <div className="flex w-[598px] p-[40px] flex-col items-start gap-6 rounded-[12px] border-[#E8E8EA] bg-[#FFF] shadow-[0px_12px_24px_-6px rgba(24,26,42,0.12)] absolute left-[11px] bottom-[13px]">
             <div className="flex flex-col items-start gap-4 self-stretch">
@@ -29,7 +30,7 @@ export const Highlight = (props) => {
             </div>
             <div>
               <p className="text-[#97989F] font-sans text-[16px] not-italic font-normal leading-6">
-                {highL.published_at}
+                {new Date(highL.published_at).toDateString()}
               </p>
             </div>
           </div>
