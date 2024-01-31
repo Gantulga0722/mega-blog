@@ -35,8 +35,21 @@ const Design = (props) => {
                       </div>
                     </div>
                   </div>
-                  <div className="flex gap-5">
-                    <div></div>
+                  <div className="flex items-center gap-5">
+                    <div className="flex items-center gap-3">
+                      <div
+                        className="w-[36px] h-[36px] rounded-[28px]"
+                        style={{
+                          backgroundImage: `url(${post.social_image})`,
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                          backgroundRepeat: "no-repeat",
+                        }}
+                      ></div>
+                      <span className="text-[#97989F] font-sans text-[16px] not-italic font-medium leading-6">
+                        {post.user.name}
+                      </span>
+                    </div>
                     <div>
                       <p className="text-[#97989F] font-sans text-[16px] not-italic font-normal leading-6">
                         {new Date(post.published_at).toDateString()}
