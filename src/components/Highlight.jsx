@@ -5,15 +5,15 @@ import { LeftArrowIcon, RightArrowIcon } from "./icons";
 export const Highlight = (props) => {
   return (
     <div className="carousel w-full">
-      <div className="md:container md:mx-auto flex flex-col gap-[11px] mt-[140px] ">
+      <div className="md:container md:mx-auto flex flex-col gap-3 mt-[140px] ">
         <div>
           {props.hlData.map((highL, key) => (
             <div
               id={key}
-              className="flex flex-col w-full gap-3 w-full caruosel-item"
+              className="flex flex-col w-full gap-3 carousel"
               key={`${highL.title}-${highL.id}`}
             >
-              <div className="w-[100%] h-[600px] shrink-0 border rounded-[12px] relative">
+              <div className="flex w-[100%] h-[600px] shrink-0 border rounded-[12px] relative carousel-item">
                 <div className="w-[100%] h-[600px] object-cover absolute rounded-xl">
                   <img
                     src={
@@ -46,12 +46,12 @@ export const Highlight = (props) => {
               </div>
               <div className="flex justify-end items-center gap-[9px]">
                 <div className="flex w-[40px] h-[40px] rounded-[6px] border border-[#696A75] justify-center items-center">
-                  <a href={`#${key == 0 ? 4 : -1}`}>
+                  <a href={`#${key == 0 ? 4 : key - 1}`}>
                     <LeftArrowIcon />
                   </a>
                 </div>
                 <div className="flex w-[40px] h-[40px] rounded-[6px] border border-[#696A75] justify-center items-center">
-                  <a href={`#${key == 4 ? 0 : +1}`}>
+                  <a href={`#${key == 4 ? 0 : key + 1}`}>
                     <RightArrowIcon />
                   </a>
                 </div>
