@@ -14,19 +14,19 @@ export const Header = () => {
           <div className="flex w-[667px] justify-center items-center gap-[40px]">
             <ul className="flex gap-10">
               <li
-                className="text-[#3B3C4A] font-sans text-[16px] not-italic font-normal leading-6"
+                className="text-[#3B3C4A] font-sans text-[16px] not-italic font-normal leading-6 cursor-pointer"
                 onClick={() => router.push("/")}
               >
                 Home
               </li>
               <li
-                className="text-[#3B3C4A] font-sans text-[16px] not-italic font-normal leading-6"
+                className="text-[#3B3C4A] font-sans text-[16px] not-italic font-normal leading-6 cursor-pointer"
                 onClick={() => router.push("/blog")}
               >
                 Blog
               </li>
               <li
-                className="text-[#3B3C4A] font-sans text-[16px] not-italic font-normal leading-6"
+                className="text-[#3B3C4A] font-sans text-[16px] not-italic font-normal leading-6 cursor-pointer"
                 onClick={() => router.push("/contact")}
               >
                 Contact

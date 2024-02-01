@@ -49,19 +49,19 @@ export const Footer = () => {
           <div className="flex w-[521px] justify-center items-start gap-20 shrink-0">
             <div className="flex flex-col items-start gap-2">
               <p
-                className="text-[#3B3C4A] font-sans text-[16px] not-italic font-normal leading-6"
+                className="text-[#3B3C4A] font-sans text-[16px] not-italic font-normal leading-6 cursor-pointer"
                 onClick={() => router.push("/")}
               >
                 Home
               </p>
               <p
-                className="text-[#3B3C4A] font-sans text-[16px] not-italic font-normal leading-6"
+                className="text-[#3B3C4A] font-sans text-[16px] not-italic font-normal leading-6 cursor-pointer"
                 onClick={() => router.push("/blog")}
               >
                 Blog
               </p>
               <p
-                className="text-[#3B3C4A] font-sans text-[16px] not-italic font-normal leading-6"
+                className="text-[#3B3C4A] font-sans text-[16px] not-italic font-normal leading-6 cursor-pointer"
                 onClick={() => router.push("/contact")}
               >
                 Contact

@@ -9,7 +9,6 @@ export default function Page(props) {
       <Highlight hlData={hlData} />
       <Trend trendData={trendData} />
       <Post postData={postData} />
-      <LoadMore />
     </div>
   );
 }

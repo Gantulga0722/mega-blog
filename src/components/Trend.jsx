@@ -14,7 +14,9 @@ export const Trend = (props) => {
         {props.trendData.map((trend) => (
           <div
             style={{
-              backgroundImage: `url(${trend.cover_image})`,
+              backgroundImage: `url(${
+                trend.cover_image ? trend.cover_image : trend.social_image
+              })`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
