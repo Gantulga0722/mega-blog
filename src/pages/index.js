@@ -14,7 +14,7 @@ export default function Page(props) {
 }
 
 export const getStaticProps = async (context) => {
-  const highlight = await fetch("https://dev.to/api/articles?top=5&per_page=1");
+  const highlight = await fetch("https://dev.to/api/articles?top=5&per_page=5");
   const hlData = await highlight.json();
   const trend = await fetch("https://dev.to/api/articles?top=1&per_page=4");
   const trendData = await trend.json();

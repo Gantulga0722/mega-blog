@@ -64,7 +64,7 @@ export const Post = (props) => {
         </div>
       </div>
       <div
-        className="w-[150px] flex justify-center items-center"
+        className="w-[150px] flex justify-center items-center mx-auto"
         onClick={LoadMoreHandler}
       >
         <LoadMore />
