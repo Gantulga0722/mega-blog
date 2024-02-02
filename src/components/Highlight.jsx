@@ -1,6 +1,7 @@
 import React from "react";
 import { HlBadge } from "@/components";
 import { LeftArrowIcon, RightArrowIcon } from "./icons";
+import Link from "next/link";
 
 export const Highlight = (props) => {
   return (
@@ -22,7 +23,6 @@ export const Highlight = (props) => {
                   className="w-[100%] h-[600px] object-cover absolute rounded-xl"
                 />
               </div>
-
               <div className="flex w-[598px] p-[40px] flex-col items-start gap-6 rounded-[12px] border-[#E8E8EA] bg-[#FFF] shadow-[0px_12px_24px_-6px rgba(24,26,42,0.12)] absolute left-[11px] bottom-[13px]">
                 <div className="flex flex-col items-start gap-4 self-stretch">
                   <div className="flex gap-2 flex-wrap">
@@ -44,16 +44,16 @@ export const Highlight = (props) => {
               </div>
             </div>
             <div className="flex justify-end items-center gap-[9px]">
-              <div className="flex w-[40px] h-[40px] rounded-[6px] border border-[#696A75] justify-center items-center">
-                <a href={`#${key == 0 ? 4 : key - 1}`}>
+              <a href={`#${key == 0 ? 4 : key - 1}`}>
+                <div className="flex w-[40px] h-[40px] rounded-[6px] border border-[#696A75] justify-center items-center">
                   <LeftArrowIcon />
-                </a>
-              </div>
-              <div className="flex w-[40px] h-[40px] rounded-[6px] border border-[#696A75] justify-center items-center">
-                <a href={`#${key == 4 ? 0 : key + 1}`}>
+                </div>
+              </a>
+              <a href={`#${key == 4 ? 0 : key + 1}`}>
+                <div className="flex w-[40px] h-[40px] rounded-[6px] border border-[#696A75] justify-center items-center">
                   <RightArrowIcon />
-                </a>
-              </div>
+                </div>
+              </a>
             </div>
           </div>
         ))}
