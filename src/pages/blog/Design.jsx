@@ -10,7 +10,7 @@ const Page = (props) => {
 
   async function loadMoreHandler() {
     const response = await fetch(
-      `https://dev.to/api/articles?tag=branding&per_page=12&page=${pageNumber}`
+      `https://dev.to/api/articles?tag=branding&per_page=3&page=${pageNumber}`
     );
     const data = await response.json();
     console.log({ data });
