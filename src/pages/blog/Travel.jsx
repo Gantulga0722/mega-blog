@@ -10,7 +10,7 @@ const Travel = (props) => {
 
   async function LoadMoreHandler() {
     const response = await fetch(
-      `https://dev.to/api/articles?tag=branding&per_page=3&page=${pageNumber}`
+      `http://localhost:4000/api/loadMore/travel${pageNumber}`
     );
     const data = await response.json();
     setArticles([...articles, ...data]);
@@ -93,9 +93,7 @@ export default Travel;
 
 export const getServerSideProps = async (context) => {
   const { query } = context;
-  const post = await fetch(
-    "https://dev.to/api/articles?tag=travel&per_page=12"
-  );
+  const post = await fetch("http://localhost:4000/api/blog/travel");
   const postData = await post.json();
 
   return {
