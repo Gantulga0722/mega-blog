@@ -1,15 +1,28 @@
 import React from "react";
 import { Highlight, Trend, Post, LoadMore } from "@/components";
+import { useState, useEffect } from "react";
 
-export default function Page(props) {
+export default function Home(props) {
   const { hlData, trendData, postData } = props;
-  console.log(props);
+  const [article, serArticle] = useState([]);
+  useEffect(() => {
+    async function getArticle() {
+      const res = await fetch("http://localhost:4000/api/blogs");
+      const data = await res.json();
+      serArticle(data);
+    }
+    getArticle();
+  }, []);
+
   return (
-    <div className="flex flex-col items-center gap-[100px] mx-auto justify-center">
-      <Highlight hlData={hlData} />
-      <Trend trendData={trendData} />
-      <Post postData={postData} />
-    </div>
+    <main>
+      <div className="flex flex-col items-center gap-[100px] mx-auto justify-center">
+        <p className="ml-5 mt-[200px]">{article?.title}</p>
+        <Highlight hlData={hlData} />
+        <Trend trendData={trendData} />
+        <Post postData={postData} />
+      </div>
+    </main>
   );
 }
 
