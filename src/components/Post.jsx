@@ -10,9 +10,7 @@ export const Post = (props) => {
   const [pageNumber, setPageNumber] = useState(2);
 
   async function LoadMoreHandler() {
-    const response = await fetch(
-      `https://dev.to/api/articles?tag=branding&per_page=3&page=${pageNumber}`
-    );
+    const response = await fetch(`http://localhost:4000/api/lmPost?page=3`);
     const data = await response.json();
     setArticles([...articles, ...data]);
     setPageNumber(pageNumber + 1);

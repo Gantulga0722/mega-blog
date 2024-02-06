@@ -10,7 +10,7 @@ const Travel = (props) => {
 
   async function LoadMoreHandler() {
     const response = await fetch(
-      `http://localhost:4000/api/loadMore/travel${pageNumber}`
+      `http://localhost:4000/api/loadMore/travel?page=3`
     );
     const data = await response.json();
     setArticles([...articles, ...data]);

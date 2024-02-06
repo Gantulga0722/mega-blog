@@ -10,7 +10,7 @@ const Fashion = (props) => {
 
   async function LoadMoreHandler() {
     const response = await fetch(
-      `http://localhost:4000/api/loadMore/fashion${pageNumber}`
+      `http://localhost:4000/api/loadMore/fashion?page=3`
     );
     const data = await response.json();
     setArticles([...articles, ...data]);

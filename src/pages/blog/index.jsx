@@ -9,9 +9,7 @@ const Blog = (props) => {
   const [pageNumber, setPageNumber] = useState(2);
 
   async function LoadMoreHandler() {
-    const response = await fetch(
-      `http://localhost:4000/api/loadMore${pageNumber}`
-    );
+    const response = await fetch(`http://localhost:4000/api/loadMore?page=3`);
     const data = await response.json();
     setArticles([...articles, ...data]);
     setPageNumber(pageNumber + 1);
