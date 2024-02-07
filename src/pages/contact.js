@@ -56,14 +56,14 @@ const Contact = () => {
                   <input
                     type="text"
                     placeholder="Your Name"
-                    className="text-[#97989F] font-sans text-[16px] not-italic font-normal leading-[26px]"
+                    className="text-[#97989F] font-sans text-[16px] not-italic font-normal leading-[26px] outline-none"
                   />
                 </div>
                 <div className="flex w-[225px] h-[38px] p-[14px_14px_14px_20px] items-center gap-3 shrink-0 rounded-[5px] border border-[#DCDDDF] bg-[#FFF]">
                   <input
                     type="text"
                     placeholder="Your Email"
-                    className="text-[#97989F] font-sans text-[16px] not-italic font-normal leading-[26px]"
+                    className="text-[#97989F] font-sans text-[16px] not-italic font-normal leading-[26px] outline-none"
                   />
                 </div>
               </div>
@@ -71,7 +71,7 @@ const Contact = () => {
                 <input
                   type="text"
                   placeholder="Subject"
-                  className="text-[#97989F] font-sans text-[16px] not-italic font-normal leading-[24px]"
+                  className="text-[#97989F] font-sans text-[16px] not-italic font-normal leading-[24px] w-[100%] outline-none"
                 />
               </div>
               <div className="flex w-[478px] h-[134px] p-[14px_14px_14px_20px] items-center gap-3 shrink-0 rounded-[5px] border border-[#DCDDDF] bg-[#FFF]">
@@ -81,7 +81,7 @@ const Contact = () => {
                   cols="60"
                   rows="5"
                   placeholder="Write a message"
-                  className="text-[#97989F] font-sans text-[16px] not-italic font-normal leading-[24px]"
+                  className="text-[#97989F] font-sans text-[16px] not-italic font-normal leading-[24px] border-none outline-none"
                 ></textarea>
               </div>
               <div>

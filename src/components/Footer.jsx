@@ -70,16 +70,24 @@ export const Footer = () => {
           </div>
           <div className="flex gap-[26.67px] justify-start">
             <div className="w-4 h-4 shrink-0">
-              <FacebookIcon />
+              <a href="https://wwww.facebook.com" target="_blank">
+                <FacebookIcon />
+              </a>
             </div>
             <div className="w-4 h-4 shrink-0">
-              <TwitterIcon />
+              <a href="https://www.twitter.com" target="_blank">
+                <TwitterIcon />
+              </a>
             </div>
             <div className="w-4 h-4 shrink-0">
-              <InstaIcon />
+              <a href="https://www.instagram.com" target="_blank">
+                <InstaIcon />
+              </a>
             </div>
             <div className="w-4 h-4 shrink-0">
-              <LinkedinIcon />
+              <a href="https://www.linkedin.com" target="_blank">
+                <LinkedinIcon />
+              </a>
             </div>
           </div>
         </div>

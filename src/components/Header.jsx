@@ -37,7 +37,7 @@ export const Header = () => {
             <div>
               <input
                 type="text"
-                className="flex-[1_0_0] text-[#A1A1AA] font-sans text-[14px] not-italic font-normal leading-5 bg-[#F4F4F5]"
+                className="flex-[1_0_0] text-[#A1A1AA] font-sans text-[14px] not-italic font-normal leading-5 bg-[#F4F4F5] outline-none"
                 placeholder="Search"
               />
             </div>

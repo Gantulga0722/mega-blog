@@ -41,7 +41,7 @@ export default Page;
 export const getServerSideProps = async (context) => {
   const { query } = context;
   const { id } = query;
-  const response = await fetch(`http://localhost:4000/api/article/id?id=${id}`);
+  const response = await fetch(`https://dev.to/api/articles/${id}`);
   const data = await response.json();
   console.log(data);
   return {
