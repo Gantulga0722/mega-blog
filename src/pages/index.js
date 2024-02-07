@@ -1,18 +1,8 @@
 import React from "react";
-import { Highlight, Trend, Post, LoadMore } from "@/components";
-import { useState, useEffect } from "react";
+import { Highlight, Trend, Post } from "@/components";
 
 export default function Home(props) {
   const { hlData, trendData, postData } = props;
-  // const [article, serArticle] = useState([]);
-  // useEffect(() => {
-  //   async function getArticle() {
-  //     const res = await fetch("http://localhost:4000/api/blogs");
-  //     const data = await res.json();
-  //     serArticle(data);
-  //   }
-  //   getArticle();
-  // }, []);
 
   return (
     <main>
