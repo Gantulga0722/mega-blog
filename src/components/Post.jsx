@@ -10,7 +10,9 @@ export const Post = (props) => {
   const [pageNumber, setPageNumber] = useState(2);
 
   async function LoadMoreHandler() {
-    const response = await fetch(`http://localhost:4000/api/lmPost?page=3`);
+    const response = await fetch(
+      `http://localhost:4000/api/lmPost?page=${pageNumber}`
+    );
     const data = await response.json();
     setArticles([...articles, ...data]);
     setPageNumber(pageNumber + 1);
@@ -19,7 +21,6 @@ export const Post = (props) => {
   return (
     <div className="flex md:container md:mx-auto flex-col gap-12">
       <TagFilter />
-
       <div className="flex flex-col items-center gap-[32px] max-w-[1280px] w-[100%]">
         <div className="flex items-start justify-between gap-5 flex-wrap">
           {articles.map((post) => (

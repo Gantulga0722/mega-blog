@@ -1,5 +1,7 @@
 import { useRouter } from "next/router";
+import Link from "next/link";
 
+const titles = ["All", "Design", "Travel", "Fashion", "Technology", "Branding"];
 export const TagFilter = () => {
   const router = useRouter();
   return (
@@ -11,44 +13,15 @@ export const TagFilter = () => {
           </h1>
         </div>
         <div className="flex w-[1216px] items-center gap-[30px]">
-          <ul className="flex items-center gap-5">
-            <li
-              className="text-[#495057] font-sans text-[12px] not-italic font-bold leading-[25px] hover:text-[#D4A373]"
-              onClick={() => router.push("/blog")}
-            >
-              All
-            </li>
-            <li
-              className="text-[#495057] font-sans text-[12px] not-italic font-bold leading-[25px] hover:text-[#D4A373]"
-              onClick={() => router.push("/blog/design")}
-            >
-              Design
-            </li>
-            <li
-              className="text-[#495057] font-sans text-[12px] not-italic font-bold leading-[25px] hover:text-[#D4A373]"
-              onClick={() => router.push("/blog/travel")}
-            >
-              Travel
-            </li>
-            <li
-              className="text-[#495057] font-sans text-[12px] not-italic font-bold leading-[25px] hover:text-[#D4A373]"
-              onClick={() => router.push("/blog/fashion")}
-            >
-              Fashion
-            </li>
-            <li
-              className="text-[#495057] font-sans text-[12px] not-italic font-bold leading-[25px] hover:text-[#D4A373]"
-              onClick={() => router.push("/blog/technology")}
-            >
-              Technology
-            </li>
-            <li
-              className="text-[#495057] font-sans text-[12px] not-italic font-bold leading-[25px] hover:text-[#D4A373]"
-              onClick={() => router.push("/blog/branding")}
-            >
-              Branding
-            </li>
-          </ul>
+          {titles.map((tag) => (
+            <Link href={`/blog/${tag.toLowerCase()}`}>
+              <ul className="flex items-center gap-5">
+                <li className="text-[#495057] font-sans text-[12px] not-italic font-bold leading-[25px] hover:text-[#D4A373]">
+                  {tag}
+                </li>
+              </ul>
+            </Link>
+          ))}
           <div className="flex-[1_0_0]">
             <p
               className="text-[#495057] text-right font-sans text-[12px] not-italic font-bold leading-[25px] hover:text-[#D4A373]"

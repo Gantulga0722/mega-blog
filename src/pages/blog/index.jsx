@@ -9,12 +9,13 @@ const Blog = (props) => {
   const [pageNumber, setPageNumber] = useState(2);
 
   async function LoadMoreHandler() {
-    const response = await fetch(`http://localhost:4000/api/loadMore?page=3`);
+    const response = await fetch(
+      `http://localhost:4000/api/loadMore?page=${pageNumber}`
+    );
     const data = await response.json();
     setArticles([...articles, ...data]);
     setPageNumber(pageNumber + 1);
   }
-
   return (
     <div className="flex flex-col gap-12 mt-[120px] md:container md:mx-auto max-w-[1280px] w-[100%]">
       <TagFilter />
@@ -89,7 +90,9 @@ const Blog = (props) => {
 };
 export default Blog;
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
+  const { query } = context;
+  const { tag } = query;
   const post = await fetch("http://localhost:4000/api/blog");
   const postData = await post.json();
 

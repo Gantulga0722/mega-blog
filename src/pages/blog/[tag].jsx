@@ -3,14 +3,17 @@ import { PostBadge } from "@/components";
 import { LoadMore } from "@/components/Buttons";
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
-const Travel = (props) => {
+const Branding = (props) => {
+  const router = useRouter();
+  console.log(router.query.tag);
   const [articles, setArticles] = useState(props.postData);
   const [pageNumber, setPageNumber] = useState(2);
 
   async function LoadMoreHandler() {
     const response = await fetch(
-      `http://localhost:4000/api/loadMore/travel?page=3`
+      `http://localhost:4000/api/loadMore/tag?tag=${router.query.tag}&page=${pageNumber}`
     );
     const data = await response.json();
     setArticles([...articles, ...data]);
@@ -22,8 +25,8 @@ const Travel = (props) => {
       <TagFilter />
       <div className="flex flex-col">
         <div className="flex flex-col items-center gap-[32px] w-[1231px]">
-          <div className="flex items-start justify-between gap-5 flex-wrap">
-            {articles.map((post) => (
+          <div className="flex items-start gap-5 justify-between flex-wrap">
+            {props.postData.map((post) => (
               <Link href={`/article/${post.id}`}>
                 <div
                   className="flex w-[392px] p-4 flex-col justify-center items-center gap-4 rounded-[12px] border border-[#E8E8EA] bg-[#FFF]"
@@ -89,11 +92,15 @@ const Travel = (props) => {
     </div>
   );
 };
-export default Travel;
+export default Branding;
 
 export const getServerSideProps = async (context) => {
   const { query } = context;
-  const post = await fetch("http://localhost:4000/api/blog/travel");
+  const { tag } = query;
+  console.log(tag);
+  const post = await fetch(
+    `http://localhost:4000/api/blog/tag?tag=${tag.toLowerCase()}`
+  );
   const postData = await post.json();
 
   return {
