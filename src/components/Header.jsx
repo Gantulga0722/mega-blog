@@ -7,7 +7,10 @@ export const Header = () => {
   return (
     <div className="w-[100%] flex max-w-[1280px] py-[32px] flex-col items-start  justify-between gap-[10px] mb-[100px] fixed z-10 bg-[#FFFFFF] ">
       <div className="flex items-start gap-[118px]">
-        <div className="w-[158px] h-[36px]" onClick={() => router.push("/")}>
+        <div
+          className="w-[158px] h-[36px] cursor-pointer"
+          onClick={() => router.push("/")}
+        >
           <MegaBlogIcon />
         </div>
         <div className="flex items-center justify-between gap-[21px]">

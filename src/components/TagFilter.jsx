@@ -14,9 +14,15 @@ export const TagFilter = () => {
         </div>
         <div className="flex w-[1216px] items-center gap-[30px]">
           {titles.map((tag) => (
-            <Link href={`/blog/${tag.toLowerCase()}`}>
+            <Link
+              href={
+                `${tag.toLowerCase()}` == "all"
+                  ? `/blog`
+                  : `/blog/${tag.toLowerCase()}`
+              }
+            >
               <ul className="flex items-center gap-5">
-                <li className="text-[#495057] font-sans text-[12px] not-italic font-bold leading-[25px] hover:text-[#D4A373]">
+                <li className="text-[#495057] font-sans text-[12px] not-italic font-bold leading-[25px] hover:text-[#D4A373] cursor-pointer">
                   {tag}
                 </li>
               </ul>
@@ -24,7 +30,7 @@ export const TagFilter = () => {
           ))}
           <div className="flex-[1_0_0]">
             <p
-              className="text-[#495057] text-right font-sans text-[12px] not-italic font-bold leading-[25px] hover:text-[#D4A373]"
+              className="text-[#495057] text-right font-sans text-[12px] not-italic font-bold leading-[25px] hover:text-[#D4A373] cursor-pointer"
               onClick={() => router.push("/blog")}
             >
               View All

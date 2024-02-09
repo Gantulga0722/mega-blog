@@ -93,7 +93,10 @@ export const Footer = () => {
         </div>
         <div className="flex  h-[95px] p-[32px_0] items-center gap-16 shrink-0 border-t border-[#DCDDDF]">
           <div className="flex items-center gap-[10px]">
-            <div className="w-[48px] h-[48px]" onClick={() => router.push("/")}>
+            <div
+              className="w-[48px] h-[48px] cursor-pointer"
+              onClick={() => router.push("/")}
+            >
               <MegaIcon />
             </div>
             <div className="flex flex-col items-start gap-[2px]">

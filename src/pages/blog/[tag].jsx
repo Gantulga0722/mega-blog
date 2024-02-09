@@ -26,7 +26,7 @@ const Branding = (props) => {
       <div className="flex flex-col">
         <div className="flex flex-col items-center gap-[32px] w-[1231px]">
           <div className="flex items-start gap-5 justify-between flex-wrap">
-            {props.postData.map((post) => (
+            {articles.map((post) => (
               <Link href={`/article/${post.id}`}>
                 <div
                   className="flex w-[392px] p-4 flex-col justify-center items-center gap-4 rounded-[12px] border border-[#E8E8EA] bg-[#FFF]"
@@ -97,7 +97,6 @@ export default Branding;
 export const getServerSideProps = async (context) => {
   const { query } = context;
   const { tag } = query;
-  console.log(tag);
   const post = await fetch(
     `http://localhost:4000/api/blog/tag?tag=${tag.toLowerCase()}`
   );
