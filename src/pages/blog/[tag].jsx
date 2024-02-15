@@ -1,7 +1,7 @@
 import { TagFilter } from "@/components";
 import { PostBadge } from "@/components";
 import { LoadMore } from "@/components/Buttons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -19,6 +19,17 @@ const Branding = (props) => {
     setArticles([...articles, ...data]);
     setPageNumber(pageNumber + 1);
   }
+
+  useEffect(() => {
+    async function updateData() {
+      const post = await fetch(
+        `http://localhost:4000/api/blog/tag?tag=${router.query.tag.toLowerCase()}`
+      );
+      const postData = await post.json();
+      setArticles(postData);
+    }
+    updateData();
+  }, [router.query.tag]);
 
   return (
     <div className="flex flex-col gap-12 mt-[120px] md:container md:mx-auto max-w-[1280px] w-[100%]">
