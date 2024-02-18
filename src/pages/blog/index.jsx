@@ -10,7 +10,7 @@ const Blog = (props) => {
 
   async function LoadMoreHandler() {
     const response = await fetch(
-      `http://first-backend-gilt.vercel.app/api/loadMore?page=${pageNumber}`
+      `https://first-backend-gilt.vercel.app/api/loadMore?page=${pageNumber}`
     );
     const data = await response.json();
     setArticles([...articles, ...data]);
@@ -93,7 +93,7 @@ export default Blog;
 export const getServerSideProps = async (context) => {
   const { query } = context;
   const { tag } = query;
-  const post = await fetch("http://first-backend-gilt.vercel.app/api/blog");
+  const post = await fetch("https://first-backend-gilt.vercel.app/api/blog");
   const postData = await post.json();
 
   return {

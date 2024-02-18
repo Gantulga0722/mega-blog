@@ -11,7 +11,7 @@ export const Post = (props) => {
 
   async function LoadMoreHandler() {
     const response = await fetch(
-      `http://first-backend-gilt.vercel.app/api/lmPost?page=${pageNumber}`
+      `https://first-backend-gilt.vercel.app/api/lmPost?page=${pageNumber}`
     );
     const data = await response.json();
     setArticles([...articles, ...data]);

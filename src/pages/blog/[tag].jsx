@@ -13,7 +13,7 @@ const Branding = (props) => {
 
   async function LoadMoreHandler() {
     const response = await fetch(
-      `http://first-backend-gilt.vercel.app/api/loadMore/tag?tag=${router.query.tag}&page=${pageNumber}`
+      `https://first-backend-gilt.vercel.app/api/loadMore/tag?tag=${router.query.tag}&page=${pageNumber}`
     );
     const data = await response.json();
     setArticles([...articles, ...data]);
@@ -23,7 +23,7 @@ const Branding = (props) => {
   useEffect(() => {
     async function updateData() {
       const post = await fetch(
-        `http://first-backend-gilt.vercel.app/api/blog/tag?tag=${router.query.tag.toLowerCase()}`
+        `https://first-backend-gilt.vercel.app/api/blog/tag?tag=${router.query.tag.toLowerCase()}`
       );
       const postData = await post.json();
       setArticles(postData);
@@ -109,7 +109,7 @@ export const getServerSideProps = async (context) => {
   const { query } = context;
   const { tag } = query;
   const post = await fetch(
-    `http://first-backend-gilt.vercel.app/api/blog/tag?tag=${tag.toLowerCase()}`
+    `https://first-backend-gilt.vercel.app/api/blog/tag?tag=${tag.toLowerCase()}`
   );
   const postData = await post.json();
 

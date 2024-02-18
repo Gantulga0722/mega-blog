@@ -42,7 +42,7 @@ export const getServerSideProps = async (context) => {
   const { query } = context;
   const { id } = query;
   const response = await fetch(
-    `http://first-backend-gilt.vercel.app/api/article/id?id=${id}`
+    `https://first-backend-gilt.vercel.app/api/article/id?id=${id}`
   );
   const data = await response.json();
   return {
