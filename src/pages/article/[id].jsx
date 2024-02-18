@@ -41,7 +41,9 @@ export default Page;
 export const getServerSideProps = async (context) => {
   const { query } = context;
   const { id } = query;
-  const response = await fetch(`http://localhost:4000/api/article/id?id=${id}`);
+  const response = await fetch(
+    `http://first-backend-gilt.vercel.app/api/article/id?id=${id}`
+  );
   const data = await response.json();
   return {
     props: {
