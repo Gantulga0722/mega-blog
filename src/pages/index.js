@@ -16,11 +16,13 @@ export default function Home(props) {
 }
 
 export const getStaticProps = async (context) => {
-  const highlight = await fetch("http://localhost:4000/api/highlight");
+  const highlight = await fetch(
+    "https://first-backend-gilt.vercel.app/api/highlight"
+  );
   const hlData = await highlight.json();
-  const trend = await fetch("http://localhost:4000/api/trend");
+  const trend = await fetch("https://first-backend-gilt.vercel.app/api/trend");
   const trendData = await trend.json();
-  const post = await fetch("http://localhost:4000/api/post");
+  const post = await fetch("https://first-backend-gilt.vercel.app/api/post");
   const postData = await post.json();
 
   return {
